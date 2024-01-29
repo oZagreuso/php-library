@@ -1,0 +1,17 @@
+{
+    "name": "odalferro/php-library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Odalferro\\PhpLibrary\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Olivier Dal Ferro",
+            "email": "120396212+oZagreuso@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
