@@ -1,6 +1,8 @@
 <?php 
 
 namespace Odalferro\Db;
+
+use Exception;
 use Odalferro\Db\config;
 
 use PDO; 
@@ -41,9 +43,17 @@ class DbConnect
 
     
 
-    public static function setConfiguration(string $chemin_vers_le_fichier): void
+    public static function setConfiguration(string $chemin): void
     {        
-        $config = require $chemin_vers_le_fichier;
-        self::$config = $config;
+        if(is_file($chemin))
+        {
+            $config = require $chemin;
+            self::$config = $config;
+        }
+        else
+        {
+        throw new Exception('Configuration base de donnée invalide');
+        }
+ 
     }
 }
